@@ -1,0 +1,19 @@
+.footer{
+    margin-top: 2%;
+    background: #fff;
+    border-top: 1px solid #4573C4;
+    font-size: 0.875rem;
+    padding: 4px !important;
+    color: #898989;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.footer{
+    margin-top:0% !important;
+    bottom:0px !important;
+    background: #eeeeee !important;
+    font-size: 11px;
+    color:black;
+    box-shadow: 0px 0px 3px black;
+}

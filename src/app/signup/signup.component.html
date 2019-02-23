@@ -1,0 +1,54 @@
+<app-header></app-header>
+        <div class="container-fluid mt-6" id="main_container">
+          <div class="row">
+            <div class="col-lg-12 text-center mt-7">
+              <div class="col-lg-4"></div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-7">
+                    <div class="row">
+                        <div class="col col-login">                    
+                                <form class="card" [formGroup]="signupForm" (ngSubmit)="signup($event)">
+                                        <div class="card-body p-6">
+                                          <div class="text-center card-title fs-16">Create Account</div>
+                                                  <div class="form-group">                                                     
+                                                      <input type="text" formControlName="userName" class="form-control" 
+                                                      [ngClass]="{ 'is-invalid': submittedsignupForm && sf.userName.errors }" 
+                                                       placeholder="Enter First Name">
+                                                      <div *ngIf="submittedsignupForm &&  sf.userName.errors" class="invalid-feedback">
+                                                          <div *ngIf="sf.userName.errors.required">First Name is required</div>
+                                                          <div *ngIf="sf.userName.errors?.minlength">Minimum 3 character required</div>
+                                                      </div>
+                                                    </div>
+                                                  <div class="form-group">
+                                                      <input type="password" formControlName="password" class="form-control"
+                                                      [ngClass]="{ 'is-invalid': submittedsignupForm && sf.password.errors }"  placeholder="Enter password">                                        
+                                                      <div *ngIf="submittedsignupForm &&  sf.password.errors" class="invalid-feedback">
+                                                          <div *ngIf="sf.password.errors.required">Password is required</div>
+                                                          
+                                                      </div>
+                                                      <div *ngIf="submittedsignupForm &&  !sf.password.errors" class="invalid-feedback">
+                                                              <div *ngIf="sf.password.valid">Password is valid</div>                                                
+                                                          </div>
+                                                    </div>   
+                                                    <div class="form-group">                                                      
+                                                        <input type="text" formControlName="gender" class="form-control" 
+                                                        [ngClass]="{ 'is-invalid': submittedsignupForm && sf.gender.errors }" 
+                                                           placeholder="Enter Gender">
+                                                        <div *ngIf="submittedsignupForm &&  sf.gender.errors" class="invalid-feedback">
+                                                            <div *ngIf="sf.gender.errors.required">Gender is required</div>
+                                                            <div *ngIf="sf.gender.errors?.minlength">Minimum 3 character required</div>
+                                                        </div>
+                                                      </div>                                        
+                                          <div class="form-footer">
+                                            <button type="submit" [ngClass]="showloader" class="btn btn-primary btn-block">Send</button>
+                                          </div>
+                                          <div class="text-center text-muted">
+                                              Already have account? <a routerLink="/login">Sign in</a>
+                                            </div>
+                                        </div>                        
+                                      </form>
+                        </div>
+                      </div>
+                </div>
+          </div>
+         </div>
+        </div>
